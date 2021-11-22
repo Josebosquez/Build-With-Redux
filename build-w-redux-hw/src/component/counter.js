@@ -3,14 +3,22 @@ import { createStore } from "redux";
 
 const count = 0;
 const ADD_1= "ADD_1"
+const SUB_1 = "SUB_1"
 
 export const addOneActionCreator = (count) => ({type: ADD_1, payload: {count}})
+export const SubOneActionCreator = (count)=>({type: SUB_1, payload: {count}})
 
 const reducer = (count, action) => {
     if(action.type === ADD_1){
         count = count + 1
         console.log(count)
     }
+    
+    if(action.type === SUB_1){
+        count = count - 1;
+        console.log(count);
+    }
+
     return count;
 }
 
